@@ -208,7 +208,7 @@ export default function Home() {
                   letterSpacing: '0%'
                 }}
               >
-                <span className="text-black">We're a global investment company, </span>
+                <span className="text-black">We&apos;re a global investment company, </span>
                 <span className="text-[#A6A6A6]">deploying our own capital to back emerging technology, fintech, and intellectual property ventures</span>
                 <span className="text-black"> — creating long-term value and driving innovation</span>
               </p>
@@ -565,7 +565,7 @@ export default function Home() {
                   }}
                 >
                   Have a bold idea?<br />
-                  Let's build the future together.
+                  Let&apos;s build the future together.
                 </h2>
 
                 {/* 버튼 */}
