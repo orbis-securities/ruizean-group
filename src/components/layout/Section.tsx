@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 import Container from './Container'
+import { FadeInUp } from '@/components/ui'
 
 interface SectionProps {
   children: ReactNode
@@ -9,6 +10,8 @@ interface SectionProps {
   padding?: 'none' | 'sm' | 'default' | 'lg' | 'xl'
   background?: 'white' | 'gray' | 'transparent'
   containedBackground?: boolean
+  animate?: boolean
+  animationDelay?: number
 }
 
 export default function Section({
@@ -17,7 +20,9 @@ export default function Section({
   containerSize = 'default',
   padding = 'default',
   background = 'transparent',
-  containedBackground = false
+  containedBackground = false,
+  animate = true,
+  animationDelay = 0
 }: SectionProps) {
   const paddingClasses = {
     none: '',
@@ -33,30 +38,42 @@ export default function Section({
     transparent: ''
   }
 
-  if (containedBackground) {
+  const SectionContent = () => {
+    if (containedBackground) {
+      return (
+        <section className={cn(paddingClasses[padding], className)}>
+          <Container
+            size={containerSize}
+            className={cn(backgroundClasses[background])}
+          >
+            {children}
+          </Container>
+        </section>
+      )
+    }
+
     return (
-      <section className={cn(paddingClasses[padding], className)}>
-        <Container
-          size={containerSize}
-          className={cn(backgroundClasses[background])}
-        >
+      <section
+        className={cn(
+          paddingClasses[padding],
+          backgroundClasses[background],
+          className
+        )}
+      >
+        <Container size={containerSize}>
           {children}
         </Container>
       </section>
     )
   }
 
-  return (
-    <section
-      className={cn(
-        paddingClasses[padding],
-        backgroundClasses[background],
-        className
-      )}
-    >
-      <Container size={containerSize}>
-        {children}
-      </Container>
-    </section>
-  )
+  if (animate) {
+    return (
+      <FadeInUp delay={animationDelay}>
+        <SectionContent />
+      </FadeInUp>
+    )
+  }
+
+  return <SectionContent />
 }
