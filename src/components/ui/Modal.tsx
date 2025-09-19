@@ -63,7 +63,7 @@ export default function Modal({
               transition={{ duration: 0.3, ease: "easeOut" }}
               className={`
                 w-full max-w-[896px] max-h-[90vh]
-                bg-white rounded-xl p-10
+                bg-white rounded-xl p-6 sm:p-10
                 flex flex-col overflow-hidden
                 shadow-2xl relative
                 ${className || ''}
