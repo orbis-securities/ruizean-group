@@ -16,12 +16,41 @@
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background: #ffffff;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer components {
+  /* Typography Styles */
+  .heading-display {
+    @apply font-funnel-display font-bold tracking-tight;
+  }
+
+  .heading-title {
+    @apply font-funnel-display font-semibold tracking-tight;
+  }
+
+  .body-text {
+    @apply font-pretendard leading-relaxed;
+  }
+
+  .body-sans {
+    @apply font-funnel-sans leading-relaxed;
+  }
+
+  .code-text {
+    @apply font-atkinson-mono;
   }
 }

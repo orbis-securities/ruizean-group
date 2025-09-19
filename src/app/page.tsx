@@ -1,175 +1,665 @@
+import { Container, Section } from '@/components/layout'
+import { Header } from '@/components/navigation'
+import { Button, SectionHeader } from '@/components/ui'
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <main className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
-            <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-gray-900">Ruizean Group</h1>
-            </div>
-            <nav className="hidden md:flex space-x-8">
-              <a href="#about" className="text-gray-500 hover:text-gray-900">소개</a>
-              <a href="#services" className="text-gray-500 hover:text-gray-900">서비스</a>
-              <a href="#contact" className="text-gray-500 hover:text-gray-900">연락처</a>
-            </nav>
-          </div>
-        </div>
-      </header>
+      <Header />
 
-      {/* Hero Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Ruizean Group에
-            <br />
-            오신 것을 환영합니다
-          </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            혁신적인 솔루션과 전문적인 서비스로 고객의 성공을 함께 만들어갑니다.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition duration-300">
-              서비스 알아보기
-            </button>
-            <button className="border border-gray-300 hover:border-gray-400 text-gray-700 px-8 py-3 rounded-lg font-semibold transition duration-300">
-              문의하기
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">회사 소개</h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Ruizean Group은 고객의 비즈니스 성장을 위한 최적의 파트너입니다.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h4 className="text-xl font-semibold mb-2">혁신</h4>
-              <p className="text-gray-600">최신 기술과 창의적 아이디어로 혁신적인 솔루션을 제공합니다.</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h4 className="text-xl font-semibold mb-2">신뢰</h4>
-              <p className="text-gray-600">투명하고 정직한 소통으로 고객과의 신뢰 관계를 구축합니다.</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <h4 className="text-xl font-semibold mb-2">협력</h4>
-              <p className="text-gray-600">고객과 함께 성장하며 상호 발전할 수 있는 관계를 만들어갑니다.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">서비스</h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              다양한 분야의 전문 서비스를 통해 고객의 목표 달성을 지원합니다.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h4 className="text-xl font-semibold mb-3">컨설팅</h4>
-              <p className="text-gray-600 mb-4">
-                전문적인 분석과 전략 수립으로 비즈니스 성장을 도와드립니다.
-              </p>
-              <a href="#" className="text-blue-600 hover:text-blue-700 font-medium">
-                자세히 보기 →
-              </a>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h4 className="text-xl font-semibold mb-3">솔루션 개발</h4>
-              <p className="text-gray-600 mb-4">
-                맞춤형 소프트웨어 솔루션으로 업무 효율성을 향상시킵니다.
-              </p>
-              <a href="#" className="text-blue-600 hover:text-blue-700 font-medium">
-                자세히 보기 →
-              </a>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h4 className="text-xl font-semibold mb-3">마케팅 지원</h4>
-              <p className="text-gray-600 mb-4">
-                효과적인 마케팅 전략으로 브랜드 가치를 높여드립니다.
-              </p>
-              <a href="#" className="text-blue-600 hover:text-blue-700 font-medium">
-                자세히 보기 →
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-3xl font-bold text-gray-900 mb-4">문의하기</h3>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            궁금한 점이 있으시거나 상담을 원하신다면 언제든지 연락주세요.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="mailto:contact@ruizeangroup.com"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition duration-300"
+      {/* First Section */}
+      <section
+        className="h-[1144px] pt-[60px] pb-[96px] flex flex-col items-center"
+        style={{ gap: '48px' }}
+      >
+        {/* 텍스트와 버튼 영역 */}
+        <Container>
+          <div className="w-[654px] h-[240px] mx-auto flex flex-col items-center justify-center gap-6">
+            {/* 제목 */}
+            <h1
+              className="w-[654px] h-[124px] font-funnel-display font-semibold text-[56px] text-center text-black flex items-center justify-center"
+              style={{
+                lineHeight: '110%',
+                letterSpacing: '0%'
+              }}
             >
-              이메일 보내기
-            </a>
-            <a
-              href="tel:+82-2-1234-5678"
-              className="border border-gray-300 hover:border-gray-400 text-gray-700 px-8 py-3 rounded-lg font-semibold transition duration-300"
+              Backing the Bold. Investing in the Future
+            </h1>
+
+            {/* 서브텍스트 */}
+            <p
+              className="font-funnel-sans font-light text-base text-center text-black"
+              style={{
+                lineHeight: '150%',
+                letterSpacing: '0%'
+              }}
             >
-              전화 상담
-            </a>
+              Global Financial Access, Technology & Strategic Capital
+            </p>
+
+            {/* 버튼 영역 */}
+            <div className="flex justify-center">
+              <Button>Pitch Your Ideas</Button>
+            </div>
+          </div>
+        </Container>
+
+        {/* 이미지 영역 - 화면 전체 너비 */}
+        <div
+          className="w-full h-[700px]"
+          style={{
+            backgroundImage: 'url(/sources/images/ruizeanBG_1.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center top',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
+        </div>
+      </section>
+
+      {/* Second Section */}
+      <section className="w-[1440px] h-[814px] mx-auto flex items-center justify-center" style={{ gap: '60px' }}>
+        <div className="w-[1320px] h-[622px] flex items-center justify-center" style={{ gap: '60px' }}>
+          {/* 이미지 박스 */}
+          <div className="w-[460px] h-[622px] flex items-center justify-center" style={{ gap: '48px' }}>
+            <div
+              className="w-[460px] h-[622px] rounded-xl bg-[#D9D9D9] flex items-center justify-center"
+            >
+              <img
+                src="/sources/images/3dSphere.png"
+                alt="3D Sphere"
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
+          </div>
+
+          {/* 텍스트 영역 */}
+          <div
+            className="w-[854px] h-[622px] pl-6 flex flex-col"
+            style={{ gap: '120px' }}
+          >
+            {/* 첫 번째 텍스트 블록 */}
+            <div
+              className="w-[830px] h-[204px] flex flex-col"
+              style={{ gap: '48px' }}
+            >
+              {/* 첫 번째 서브 블록 */}
+              <div className="w-[830px] h-[82px] flex items-center">
+                <SectionHeader label="Who We Are" title="About Us" />
+              </div>
+
+              {/* 두 번째 서브 블록 */}
+              <div
+                className="w-[830px] h-[74px] flex flex-row"
+                style={{ gap: '40px' }}
+              >
+                {/* 첫 번째 아이템 */}
+                <div
+                  className="w-[203px] h-[74px] flex flex-col"
+                  style={{ gap: '4px' }}
+                >
+                  <div
+                    className="font-funnel-display font-semibold text-[40px] text-black"
+                    style={{
+                      lineHeight: '115%',
+                      letterSpacing: '0%'
+                    }}
+                  >
+                    $55M
+                  </div>
+                  <div
+                    className="font-funnel-sans font-light text-base text-[#A6A6A6]"
+                    style={{
+                      lineHeight: '150%',
+                      letterSpacing: '0%'
+                    }}
+                  >
+                    Under Active Investment
+                  </div>
+                </div>
+
+                {/* 두 번째 아이템 */}
+                <div
+                  className="w-[203px] h-[74px] flex flex-col"
+                  style={{ gap: '4px' }}
+                >
+                  <div
+                    className="font-funnel-display font-semibold text-[40px] text-black"
+                    style={{
+                      lineHeight: '115%',
+                      letterSpacing: '0%'
+                    }}
+                  >
+                    8
+                  </div>
+                  <div
+                    className="font-funnel-sans font-light text-base text-[#A6A6A6]"
+                    style={{
+                      lineHeight: '150%',
+                      letterSpacing: '0%'
+                    }}
+                  >
+                    Portfolio Companies
+                  </div>
+                </div>
+
+                {/* 세 번째 아이템 */}
+                <div
+                  className="w-[203px] h-[74px] flex flex-col"
+                  style={{ gap: '4px' }}
+                >
+                  <div
+                    className="font-funnel-display font-semibold text-[40px] text-black"
+                    style={{
+                      lineHeight: '115%',
+                      letterSpacing: '0%'
+                    }}
+                  >
+                    9+
+                  </div>
+                  <div
+                    className="font-funnel-sans font-light text-base text-[#A6A6A6]"
+                    style={{
+                      lineHeight: '150%',
+                      letterSpacing: '0%'
+                    }}
+                  >
+                    Countries
+                  </div>
+                </div>
+
+                {/* 네 번째 아이템 */}
+                <div
+                  className="w-[203px] h-[74px] flex flex-col"
+                  style={{ gap: '4px' }}
+                >
+                  <div
+                    className="font-funnel-display font-semibold text-[40px] text-black"
+                    style={{
+                      lineHeight: '115%',
+                      letterSpacing: '0%'
+                    }}
+                  >
+                    10+
+                  </div>
+                  <div
+                    className="font-funnel-sans font-light text-base text-[#A6A6A6]"
+                    style={{
+                      lineHeight: '150%',
+                      letterSpacing: '0%'
+                    }}
+                  >
+                    Years of Experience
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 두 번째 텍스트 블록 */}
+            <div
+              className="w-[830px] h-[298px] flex flex-col"
+              style={{ gap: '24px' }}
+            >
+              <p
+                className="font-funnel-display font-semibold text-[40px]"
+                style={{
+                  lineHeight: '115%',
+                  letterSpacing: '0%'
+                }}
+              >
+                <span className="text-black">We're a global investment company, </span>
+                <span className="text-[#A6A6A6]">deploying our own capital to back emerging technology, fintech, and intellectual property ventures</span>
+                <span className="text-black"> — creating long-term value and driving innovation</span>
+              </p>
+
+              {/* Where We Invest 버튼 */}
+              <div className="flex">
+                <Button>Where We Invest</Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Third Section */}
+      <section
+        className="w-[1500px] h-[702px] mx-auto px-[60px] pt-[96px] pb-[96px] flex items-center justify-center"
+        style={{ gap: '48px' }}
+      >
+        <div
+          className="w-[1380px] h-[510px] flex flex-col"
+          style={{ gap: '48px' }}
+        >
+          {/* 헤더 영역 */}
+          <div className="w-[1380px] h-[122px] flex items-center">
+            <SectionHeader
+              label="Portfolio"
+              title="Where We Invest"
+              description="We invest in transformative companies at the intersection of technology, infrastructure, and everyday impact"
+            />
+          </div>
+
+          {/* 콘텐츠 영역 */}
+          <div
+            className="w-[1380px] h-[340px] flex flex-row"
+            style={{ gap: '6px' }}
+          >
+            {/* 첫 번째 카드 - Fintech */}
+            <div className="w-[341px] h-[340px] flex flex-col justify-between border-t rounded-xl p-4 bg-[#FAFAFA]">
+              {/* 이미지 */}
+              <div className="w-[100px] h-[100px]">
+                <img
+                  src="/sources/images/cardIcon_1.png"
+                  alt="Fintech"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              {/* 텍스트 영역 */}
+              <div className="w-[309px] h-[76px] flex flex-col" style={{ gap: '4px' }}>
+                <p
+                  className="font-funnel-sans font-light text-base text-black"
+                  style={{
+                    lineHeight: '150%',
+                    letterSpacing: '0%'
+                  }}
+                >
+                  Fintech
+                </p>
+                <p
+                  className="font-funnel-sans font-light text-base text-[#A6A6A6]"
+                  style={{
+                    lineHeight: '150%',
+                    letterSpacing: '0%'
+                  }}
+                >
+                  Rebuilding financial systems for speed, access, and inclusion.
+                </p>
+              </div>
+            </div>
+
+            {/* 두 번째 카드 - Real Estate */}
+            <div className="w-[341px] h-[340px] flex flex-col justify-between border-t rounded-xl p-4 bg-[#FAFAFA]">
+              {/* 이미지 */}
+              <div className="w-[100px] h-[100px]">
+                <img
+                  src="/sources/images/cardIcon_2.png"
+                  alt="Real Estate"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              {/* 텍스트 영역 */}
+              <div className="w-[309px] h-[76px] flex flex-col" style={{ gap: '4px' }}>
+                <p
+                  className="font-funnel-sans font-light text-base text-black"
+                  style={{
+                    lineHeight: '150%',
+                    letterSpacing: '0%'
+                  }}
+                >
+                  Real Estate
+                </p>
+                <p
+                  className="font-funnel-sans font-light text-base text-[#A6A6A6]"
+                  style={{
+                    lineHeight: '150%',
+                    letterSpacing: '0%'
+                  }}
+                >
+                  Building long-term value with strategic real estate investments.
+                </p>
+              </div>
+            </div>
+
+            {/* 세 번째 카드 - AI */}
+            <div className="w-[341px] h-[340px] flex flex-col justify-between border-t rounded-xl p-4 bg-[#FAFAFA]">
+              {/* 이미지 */}
+              <div className="w-[100px] h-[100px]">
+                <img
+                  src="/sources/images/cardIcon_3.png"
+                  alt="AI"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              {/* 텍스트 영역 */}
+              <div className="w-[309px] h-[76px] flex flex-col" style={{ gap: '4px' }}>
+                <p
+                  className="font-funnel-sans font-light text-base text-black"
+                  style={{
+                    lineHeight: '150%',
+                    letterSpacing: '0%'
+                  }}
+                >
+                  AI
+                </p>
+                <p
+                  className="font-funnel-sans font-light text-base text-[#A6A6A6]"
+                  style={{
+                    lineHeight: '150%',
+                    letterSpacing: '0%'
+                  }}
+                >
+                  Driving intelligent systems that transform finance and enterprise.
+                </p>
+              </div>
+            </div>
+
+            {/* 네 번째 카드 - SaaS & Enterprise */}
+            <div className="w-[341px] h-[340px] flex flex-col justify-between border-t rounded-xl p-4 bg-[#FAFAFA]">
+              {/* 이미지 */}
+              <div className="w-[100px] h-[100px]">
+                <img
+                  src="/sources/images/cardIcon_4.png"
+                  alt="SaaS & Enterprise"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              {/* 텍스트 영역 */}
+              <div className="w-[309px] h-[76px] flex flex-col" style={{ gap: '4px' }}>
+                <p
+                  className="font-funnel-sans font-light text-base text-black"
+                  style={{
+                    lineHeight: '150%',
+                    letterSpacing: '0%'
+                  }}
+                >
+                  SaaS & Enterprise
+                </p>
+                <p
+                  className="font-funnel-sans font-light text-base text-[#A6A6A6]"
+                  style={{
+                    lineHeight: '150%',
+                    letterSpacing: '0%'
+                  }}
+                >
+                  Powering workflows and teams with scalable, intuitive platforms.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Fourth Section */}
+      <section
+        className="w-full h-[892px] bg-[#FAFAFA] flex items-center justify-center"
+        style={{ gap: '48px' }}
+      >
+        <div
+          className="w-[1380px] h-[892px] px-[60px] pt-[96px] pb-[96px] flex items-center justify-center"
+          style={{ gap: '48px' }}
+        >
+          <div
+            className="w-[1260px] h-[700px] flex items-center justify-center"
+            style={{ gap: '48px' }}
+          >
+            <div
+              className="w-[1260px] h-[700px] flex flex-row items-center"
+              style={{ gap: '6px' }}
+            >
+              {/* 텍스트 영역 */}
+              <div
+                className="w-[567px] h-[506px] pl-6 flex flex-col"
+                style={{ gap: '32px' }}
+              >
+                <SectionHeader
+                  label="Approach"
+                  title="Our Approach"
+                  description="We keep things simple, strategic, and founder-first — from first conversation to long-term growth"
+                />
+
+                {/* 첫 번째 아이템 - Discovery */}
+                <div
+                  className="w-[543px] h-[88px] pt-3 border-t border-[#F2F2F2] flex flex-col"
+                  style={{ gap: '24px' }}
+                >
+                  <div
+                    className="w-[543px] h-[76px] flex flex-col"
+                    style={{ gap: '4px' }}
+                  >
+                    <p
+                      className="font-sans font-normal text-base text-black"
+                      style={{
+                        lineHeight: '150%',
+                        letterSpacing: '0%'
+                      }}
+                    >
+                      1 Discovery
+                    </p>
+                    <p
+                      className="font-sans font-normal text-base text-[#A6A6A6]"
+                      style={{
+                        lineHeight: '150%',
+                        letterSpacing: '0%'
+                      }}
+                    >
+                      We start by listening. Every founder, market, and story is different — we take time to understand your vision and the opportunity ahead.
+                    </p>
+                  </div>
+                </div>
+
+                {/* 두 번째 아이템 - Research */}
+                <div
+                  className="w-[543px] h-[88px] pt-3 border-t border-[#F2F2F2] flex flex-col"
+                  style={{ gap: '24px' }}
+                >
+                  <div
+                    className="w-[543px] h-[76px] flex flex-col"
+                    style={{ gap: '4px' }}
+                  >
+                    <p
+                      className="font-sans font-normal text-base text-black"
+                      style={{
+                        lineHeight: '150%',
+                        letterSpacing: '0%'
+                      }}
+                    >
+                      2 Research
+                    </p>
+                    <p
+                      className="font-sans font-normal text-base text-[#A6A6A6]"
+                      style={{
+                        lineHeight: '150%',
+                        letterSpacing: '0%'
+                      }}
+                    >
+                      We dive deep. From industry trends to product mechanics, we form conviction through thoughtful analysis and firsthand diligence.
+                    </p>
+                  </div>
+                </div>
+
+                {/* 세 번째 아이템 - Partnership */}
+                <div
+                  className="w-[543px] h-[88px] pt-3 border-t border-[#F2F2F2] flex flex-col"
+                  style={{ gap: '24px' }}
+                >
+                  <div
+                    className="w-[543px] h-[76px] flex flex-col"
+                    style={{ gap: '4px' }}
+                  >
+                    <p
+                      className="font-sans font-normal text-base text-black"
+                      style={{
+                        lineHeight: '150%',
+                        letterSpacing: '0%'
+                      }}
+                    >
+                      3 Partnership
+                    </p>
+                    <p
+                      className="font-sans font-normal text-base text-[#A6A6A6]"
+                      style={{
+                        lineHeight: '150%',
+                        letterSpacing: '0%'
+                      }}
+                    >
+                      When we invest, we commit. That means strategic input, access to our capital, network and long-term support through every stage of growth.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 이미지 영역 */}
+              <div className="w-[687px] h-[700px]">
+                <img
+                  src="/sources/images/3dBoxes.png"
+                  alt="3D Boxes"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Fifth Section */}
+      <section
+        className="w-[1500px] h-[696px] mx-auto flex items-center justify-center"
+        style={{ gap: '48px' }}
+      >
+        <div
+          className="w-[1500px] h-[696px] px-[60px] pt-[48px] pb-[48px] flex items-center justify-center"
+          style={{ gap: '48px' }}
+        >
+          <div
+            className="w-[1380px] h-[600px] rounded-xl p-10 relative overflow-hidden"
+            style={{ gap: '24px' }}
+          >
+            {/* 배경 이미지 */}
+            <img
+              src="/sources/images/ruizeanBG_2.png"
+              alt="Ruizean Background 2"
+              className="absolute inset-0 w-full h-full object-cover rounded-xl"
+            />
+
+            {/* 검은색 오버레이 */}
+            <div className="absolute inset-0 bg-black opacity-70 rounded-xl"></div>
+
+            {/* 내용이 들어갈 자리 */}
+            <div className="relative z-10 w-full h-full flex items-center justify-center">
+              <div
+                className="w-[1300px] h-[128px] flex flex-col items-center justify-center"
+                style={{ gap: '16px' }}
+              >
+                {/* 라벨 */}
+                <p
+                  className="font-atkinson-mono font-normal text-sm uppercase text-white text-center"
+                  style={{
+                    lineHeight: '140%',
+                    letterSpacing: '3%'
+                  }}
+                >
+                  Get Started
+                </p>
+
+                {/* 제목 */}
+                <h2
+                  className="font-funnel-display font-semibold text-[40px] text-white text-center"
+                  style={{
+                    lineHeight: '115%',
+                    letterSpacing: '0%'
+                  }}
+                >
+                  Have a bold idea?<br />
+                  Let's build the future together.
+                </h2>
+
+                {/* 버튼 */}
+                <div className="flex justify-center">
+                  <Button>Pitch Your Ideas</Button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h4 className="text-2xl font-bold mb-4">Ruizean Group</h4>
-            <p className="text-gray-400 mb-4">
-              혁신적인 솔루션으로 더 나은 미래를 만들어갑니다.
+      <footer
+        className="w-[1500px] h-[440px] mx-auto px-[60px] pt-[48px] pb-[48px] flex items-center justify-center"
+        style={{ gap: '48px' }}
+      >
+        <div
+          className="w-[1380px] h-[344px] rounded-xl p-10 bg-[#FAFAFA] flex flex-col items-center justify-center"
+          style={{ gap: '48px' }}
+        >
+          {/* 첫 번째 영역 */}
+          <div
+            className="w-[1300px] h-[133px] flex flex-col justify-start items-start"
+            style={{ gap: '24px' }}
+          >
+            {/* 로고와 회사명 */}
+            <div className="flex items-center">
+              {/* 로고 */}
+              <div className="w-8 h-8 flex items-center justify-center">
+                <img
+                  src="/sources/svg/ruizeanLogo.svg"
+                  alt="Ruizean Logo"
+                  className="w-full h-full"
+                />
+              </div>
+
+              {/* 회사명 */}
+              <h3
+                className="ml-[6.4px] font-pretendard font-bold text-2xl leading-none tracking-[-0.01em] text-[#191919] whitespace-nowrap"
+                style={{ lineHeight: '100%' }}
+              >
+                Ruizean Group
+              </h3>
+            </div>
+
+            {/* 설명 텍스트 */}
+            <p
+              className="font-funnel-sans font-light text-sm text-left text-black"
+              style={{
+                lineHeight: '140%',
+                letterSpacing: '0%'
+              }}
+            >
+              Bridging Opportunities Across Borders<br />
+              Delivering Global Financial Access,<br />
+              Technology & Strategic Capital
             </p>
-            <div className="flex justify-center space-x-6">
-              <a href="#" className="text-gray-400 hover:text-white">
-                개인정보처리방침
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                이용약관
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                회사소개
-              </a>
-            </div>
-            <div className="mt-8 pt-8 border-t border-gray-800 text-gray-400">
-              <p>&copy; 2024 Ruizean Group. All rights reserved.</p>
-            </div>
+          </div>
+
+          {/* 두 번째 영역 */}
+          <div
+            className="w-[1300px] h-[83px] flex flex-col justify-start items-start"
+            style={{ gap: '16px' }}
+          >
+            {/* 저작권 */}
+            <p
+              className="font-funnel-sans font-light text-xs text-black"
+              style={{
+                lineHeight: '140%',
+                letterSpacing: '0%'
+              }}
+            >
+              © Ruizean Group Pty Ltd
+            </p>
+
+            {/* 구분선 */}
+            <div className="w-full h-px border-t border-[#E6E6E6]"></div>
+
+            {/* 주소와 법적 고지 */}
+            <p
+              className="font-funnel-sans font-light text-xs text-[#A6A6A6]"
+              style={{
+                lineHeight: '140%',
+                letterSpacing: '0%'
+              }}
+            >
+              Suite 902, Level 9, Tower B, 821 Pacific Highway, Chatswood NSW, Australia, 2067 ACN: 167 543 580<br />
+              The information provided on this website is for general informational purposes only and does not constitute financial advice or an offer to buy or sell any financial product.
+            </p>
           </div>
         </div>
       </footer>
+
     </main>
   )
 }
