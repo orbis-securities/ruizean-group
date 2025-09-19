@@ -58,13 +58,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Second Section - Desktop */}
-      <section className="hidden sm:flex w-[1440px] h-[814px] mx-auto items-center justify-center" style={{ gap: '60px' }}>
-        <div className="w-[1320px] h-[622px] flex items-center justify-center" style={{ gap: '60px' }}>
+      {/* Second Section */}
+      <section className="w-full max-w-[1440px] h-auto min-h-[400px] sm:h-[814px] mx-auto flex flex-col sm:flex-row items-center justify-center px-4 sm:px-0 py-8 sm:py-0" style={{ gap: '30px' }}>
+        <div className="w-full max-w-[1320px] h-auto sm:h-[622px] flex flex-col sm:flex-row items-center justify-center" style={{ gap: '30px' }}>
           {/* 이미지 박스 */}
-          <div className="w-[460px] h-[622px] flex items-center justify-center" style={{ gap: '48px' }}>
+          <div className="w-full max-w-[300px] sm:w-[460px] h-[300px] sm:h-[622px] flex items-center justify-center order-2 sm:order-1">
             <div
-              className="w-[460px] h-[622px] rounded-xl bg-[#D9D9D9] flex items-center justify-center"
+              className="w-full h-full rounded-xl bg-[#D9D9D9] flex items-center justify-center"
             >
               <img
                 src="/sources/images/3dSphere.png"
@@ -76,8 +76,8 @@ export default function Home() {
 
           {/* 텍스트 영역 */}
           <div
-            className="w-[854px] h-[622px] pl-6 flex flex-col"
-            style={{ gap: '120px' }}
+            className="w-full max-w-[854px] h-auto sm:h-[622px] px-4 sm:pl-6 flex flex-col order-1 sm:order-2"
+            style={{ gap: '60px' }}
           >
             {/* 첫 번째 텍스트 블록 */}
             <div
@@ -222,65 +222,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Second Section - Mobile Version */}
-      <section className="block sm:hidden w-full py-8 px-4">
-        <div className="w-full max-w-[360px] mx-auto space-y-8">
-          {/* SectionHeader */}
-          <div className="text-center">
-            <SectionHeader label="Who We Are" title="About Us" />
-          </div>
-
-          {/* 이미지 */}
-          <div className="px-4">
-            <div className="w-full h-[180px] rounded-xl bg-[#D9D9D9] overflow-hidden">
-              <img
-                src="/sources/images/3dSphere.png"
-                alt="3D Sphere"
-                className="w-full h-full object-cover"
-                style={{
-                  objectPosition: 'center 25%'
-                }}
-              />
-            </div>
-          </div>
-
-          {/* 통계 카드들 */}
-          <div className="grid grid-cols-2 gap-3">
-            <div className="bg-gray-100 rounded-xl p-3 text-center shadow-sm h-[70px] flex flex-col justify-center">
-              <div className="font-funnel-display font-semibold text-xl text-black">$55M</div>
-              <div className="font-funnel-sans font-light text-xs text-[#A6A6A6]">Under Active Investment</div>
-            </div>
-            <div className="bg-gray-100 rounded-xl p-3 text-center shadow-sm h-[70px] flex flex-col justify-center">
-              <div className="font-funnel-display font-semibold text-xl text-black">8</div>
-              <div className="font-funnel-sans font-light text-xs text-[#A6A6A6]">Portfolio Companies</div>
-            </div>
-            <div className="bg-gray-100 rounded-xl p-3 text-center shadow-sm h-[70px] flex flex-col justify-center">
-              <div className="font-funnel-display font-semibold text-xl text-black">9+</div>
-              <div className="font-funnel-sans font-light text-xs text-[#A6A6A6]">Countries</div>
-            </div>
-            <div className="bg-gray-100 rounded-xl p-3 text-center shadow-sm h-[70px] flex flex-col justify-center">
-              <div className="font-funnel-display font-semibold text-xl text-black">10+</div>
-              <div className="font-funnel-sans font-light text-xs text-[#A6A6A6]">Years of Experience</div>
-            </div>
-          </div>
-
-          {/* 회사 설명 */}
-          <p className="font-funnel-display font-semibold text-lg text-center" style={{ lineHeight: '115%' }}>
-            <span className="text-black">We&apos;re a global investment company, </span>
-            <span className="text-[#A6A6A6]">deploying our own capital to back emerging technology, fintech, and intellectual property ventures</span>
-            <span className="text-black"> — creating long-term value and driving innovation</span>
-          </p>
-
-          {/* 버튼 */}
-          <div className="flex justify-center">
-            <Button>Where We Invest</Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Third Section - Desktop */}
+      {/* Third Section */}
       <section
-        className="hidden sm:flex w-[1500px] h-[702px] mx-auto px-[60px] pt-[96px] pb-[96px] items-center justify-center"
+        className="w-[1500px] h-[702px] mx-auto px-[60px] pt-[96px] pb-[96px] flex items-center justify-center"
         style={{ gap: '48px' }}
       >
         <div
@@ -440,78 +384,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Third Section - Mobile Version */}
-      <section className="block sm:hidden w-full py-8 px-4">
-        <div className="w-full max-w-[360px] mx-auto space-y-6">
-          {/* SectionHeader */}
-          <div className="text-center">
-            <SectionHeader
-              label="Portfolio"
-              title="Where We Invest"
-              description="We invest in transformative companies at the intersection of technology, infrastructure, and everyday impact"
-            />
-          </div>
-
-          {/* 카드들 */}
-          <div className="space-y-4">
-            {/* Fintech */}
-            <div className="w-full bg-[#FAFAFA] rounded-xl p-4 flex items-center gap-4">
-              <div className="w-16 h-16 flex-shrink-0">
-                <img src="/sources/images/cardIcon_1.png" alt="Fintech" className="w-full h-full object-contain" />
-              </div>
-              <div className="flex-1">
-                <p className="font-funnel-sans font-light text-base text-black mb-1">Fintech</p>
-                <p className="font-funnel-sans font-light text-sm text-[#A6A6A6]">
-                  Rebuilding financial systems for speed, access, and inclusion.
-                </p>
-              </div>
-            </div>
-
-            {/* Real Estate */}
-            <div className="w-full bg-[#FAFAFA] rounded-xl p-4 flex items-center gap-4">
-              <div className="w-16 h-16 flex-shrink-0">
-                <img src="/sources/images/cardIcon_2.png" alt="Real Estate" className="w-full h-full object-contain" />
-              </div>
-              <div className="flex-1">
-                <p className="font-funnel-sans font-light text-base text-black mb-1">Real Estate</p>
-                <p className="font-funnel-sans font-light text-sm text-[#A6A6A6]">
-                  Building long-term value with strategic real estate investments.
-                </p>
-              </div>
-            </div>
-
-            {/* AI */}
-            <div className="w-full bg-[#FAFAFA] rounded-xl p-4 flex items-center gap-4">
-              <div className="w-16 h-16 flex-shrink-0">
-                <img src="/sources/images/cardIcon_3.png" alt="AI" className="w-full h-full object-contain" />
-              </div>
-              <div className="flex-1">
-                <p className="font-funnel-sans font-light text-base text-black mb-1">AI</p>
-                <p className="font-funnel-sans font-light text-sm text-[#A6A6A6]">
-                  Driving intelligent systems that transform finance and enterprise.
-                </p>
-              </div>
-            </div>
-
-            {/* SaaS & Enterprise */}
-            <div className="w-full bg-[#FAFAFA] rounded-xl p-4 flex items-center gap-4">
-              <div className="w-16 h-16 flex-shrink-0">
-                <img src="/sources/images/cardIcon_4.png" alt="SaaS & Enterprise" className="w-full h-full object-contain" />
-              </div>
-              <div className="flex-1">
-                <p className="font-funnel-sans font-light text-base text-black mb-1">SaaS & Enterprise</p>
-                <p className="font-funnel-sans font-light text-sm text-[#A6A6A6]">
-                  Powering workflows and teams with scalable, intuitive platforms.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Fourth Section - Desktop */}
+      {/* Fourth Section */}
       <section
-        className="hidden sm:flex w-full h-[892px] bg-[#FAFAFA] items-center justify-center"
+        className="w-full h-[892px] bg-[#FAFAFA] flex items-center justify-center"
         style={{ gap: '48px' }}
       >
         <div
@@ -641,67 +516,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Fourth Section - Mobile Version */}
-      <section className="block sm:hidden w-full bg-[#FAFAFA] py-8 px-4">
-        <div className="w-full max-w-[360px] mx-auto space-y-6">
-          {/* SectionHeader */}
-          <div className="text-center">
-            <SectionHeader
-              label="Approach"
-              title="Our Approach"
-              description="We keep things simple, strategic, and founder-first — from first conversation to long-term growth"
-            />
-          </div>
-
-          {/* 이미지 */}
-          <div className="px-4">
-            <div className="w-full h-[200px] rounded-xl overflow-hidden">
-              <img
-                src="/sources/images/3dBoxes.png"
-                alt="3D Boxes"
-                className="w-full h-full object-cover"
-                style={{
-                  objectPosition: 'center center'
-                }}
-              />
-            </div>
-          </div>
-
-          {/* 프로세스 단계들 */}
-          <div className="space-y-4">
-            <div className="border-t border-[#F2F2F2] pt-4">
-              <div className="space-y-2">
-                <p className="font-sans font-normal text-base text-black">1 Discovery</p>
-                <p className="font-sans font-normal text-sm text-[#A6A6A6]">
-                  We start by listening. Every founder, market, and story is different — we take time to understand your vision and the opportunity ahead.
-                </p>
-              </div>
-            </div>
-
-            <div className="border-t border-[#F2F2F2] pt-4">
-              <div className="space-y-2">
-                <p className="font-sans font-normal text-base text-black">2 Research</p>
-                <p className="font-sans font-normal text-sm text-[#A6A6A6]">
-                  We dive deep. From industry trends to product mechanics, we form conviction through thoughtful analysis and firsthand diligence.
-                </p>
-              </div>
-            </div>
-
-            <div className="border-t border-[#F2F2F2] pt-4">
-              <div className="space-y-2">
-                <p className="font-sans font-normal text-base text-black">3 Partnership</p>
-                <p className="font-sans font-normal text-sm text-[#A6A6A6]">
-                  When we invest, we commit. That means strategic input, access to our capital, network and long-term support through every stage of growth.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Fifth Section - Desktop */}
+      {/* Fifth Section */}
       <section
-        className="hidden sm:flex w-[1500px] h-[696px] mx-auto items-center justify-center"
+        className="w-[1500px] h-[696px] mx-auto flex items-center justify-center"
         style={{ gap: '48px' }}
       >
         <div
@@ -761,47 +578,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Fifth Section - Mobile Version */}
-      <section className="block sm:hidden w-full py-8 px-4">
-        <div className="w-full max-w-[360px] mx-auto">
-          <div className="w-full h-[250px] rounded-xl relative overflow-hidden">
-            {/* 배경 이미지 */}
-            <div
-              className="absolute inset-0 rounded-xl"
-              style={{
-                backgroundImage: 'url(/sources/images/ruizeanBG_2.png)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
-              }}
-            />
-
-            {/* 검은색 오버레이 */}
-            <div className="absolute inset-0 bg-black opacity-70 rounded-xl"></div>
-
-            {/* 내용 */}
-            <div className="relative z-10 w-full h-full flex items-center justify-center p-4">
-              <div className="text-center space-y-4">
-                <p className="font-atkinson-mono font-normal text-xs uppercase text-white" style={{ letterSpacing: '3%' }}>
-                  Get Started
-                </p>
-                <h2 className="font-funnel-display font-semibold text-lg text-white" style={{ lineHeight: '115%' }}>
-                  Have a bold idea?<br />
-                  Let&apos;s build the future together.
-                </h2>
-                <div className="pt-2">
-                  <Button>Pitch Your Ideas</Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
-      {/* Footer - Desktop */}
       <footer
-        className="hidden sm:flex w-[1500px] h-[440px] mx-auto px-[60px] pt-[48px] pb-[48px] items-center justify-center"
+        className="w-[1500px] h-[440px] mx-auto px-[60px] pt-[48px] pb-[48px] flex items-center justify-center"
         style={{ gap: '48px' }}
       >
         <div
@@ -877,42 +656,6 @@ export default function Home() {
               Suite 902, Level 9, Tower B, 821 Pacific Highway, Chatswood NSW, Australia, 2067 ACN: 167 543 580<br />
               The information provided on this website is for general informational purposes only and does not constitute financial advice or an offer to buy or sell any financial product.
             </p>
-          </div>
-        </div>
-      </footer>
-
-      {/* Footer - Mobile Version */}
-      <footer className="block sm:hidden w-full py-6 px-4">
-        <div className="w-full max-w-[360px] mx-auto">
-          <div className="w-full bg-[#FAFAFA] rounded-xl p-6 space-y-6">
-            {/* 로고와 회사명 */}
-            <div className="flex items-center justify-center">
-              <div className="w-6 h-6">
-                <img src="/sources/svg/ruizeanLogo.svg" alt="Ruizean Logo" className="w-full h-full" />
-              </div>
-              <h3 className="ml-2 font-pretendard font-bold text-lg text-[#191919]">
-                Ruizean Group
-              </h3>
-            </div>
-
-            {/* 설명 텍스트 */}
-            <p className="font-funnel-sans font-light text-xs text-center text-black">
-              Bridging Opportunities Across Borders<br />
-              Delivering Global Financial Access,<br />
-              Technology & Strategic Capital
-            </p>
-
-            {/* 구분선 */}
-            <div className="w-full h-px border-t border-[#E6E6E6]"></div>
-
-            {/* 저작권과 법적 고지 */}
-            <div className="text-center space-y-2">
-              <p className="font-funnel-sans font-light text-xs text-black">© Ruizean Group Pty Ltd</p>
-              <p className="font-funnel-sans font-light text-xs text-[#A6A6A6]">
-                Suite 902, Level 9, Tower B, 821 Pacific Highway, Chatswood NSW, Australia, 2067 ACN: 167 543 580<br />
-                The information provided on this website is for general informational purposes only and does not constitute financial advice or an offer to buy or sell any financial product.
-              </p>
-            </div>
           </div>
         </div>
       </footer>

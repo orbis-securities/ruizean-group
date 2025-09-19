@@ -23,7 +23,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
       className={cn(
         // 기본 스타일 - 텍스트에 맞게 자동 조정, padding 12px 24px, border-radius 12px
         'inline-flex items-center justify-center',
-        'min-w-[150px] h-[44px]',
+        'min-w-[120px] sm:min-w-[150px] h-[40px] sm:h-[44px]',
         'px-6 py-3', // 24px 좌우, 12px 상하
         'rounded-xl', // 12px 반경
         'gap-2', // 8px 간격

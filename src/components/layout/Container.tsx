@@ -24,7 +24,7 @@ export default function Container({
     none: '',
     sm: 'px-4 sm:px-6',
     default: 'px-4 sm:px-6 lg:px-8',
-    lg: 'px-6 sm:px-8 lg:px-12'
+    lg: 'px-4 sm:px-8 lg:px-12'
   }
 
   return (
