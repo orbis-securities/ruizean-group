@@ -1,8 +1,13 @@
+'use client'
+
 import { Container, Section } from '@/components/layout'
 import { Header } from '@/components/navigation'
-import { Button, SectionHeader, MotionSection } from '@/components/ui'
+import { Button, SectionHeader, MotionSection, Modal, Input } from '@/components/ui'
+import { useState } from 'react'
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
     <main className="min-h-screen bg-white">
       {/* Header */}
@@ -38,7 +43,7 @@ export default function Home() {
 
             {/* 버튼 영역 */}
             <div className="flex justify-center">
-              <Button>Pitch Your Ideas</Button>
+              <Button onClick={() => setIsModalOpen(true)}>Pitch Your Ideas</Button>
             </div>
           </div>
         </Container>
@@ -110,7 +115,7 @@ export default function Home() {
                 <span className="text-black"> — creating long-term value and driving innovation</span>
               </p>
               <div className="flex">
-                <Button>Where We Invest</Button>
+                <Button onClick={() => setIsModalOpen(true)}>Where We Invest</Button>
               </div>
             </div>
           </div>
@@ -170,7 +175,7 @@ export default function Home() {
 
           {/* 버튼 */}
           <div className="flex justify-center">
-            <Button>Where We Invest</Button>
+            <Button onClick={() => setIsModalOpen(true)}>Where We Invest</Button>
           </div>
         </div>
         </section>
@@ -355,7 +360,7 @@ export default function Home() {
 
                 {/* 버튼 */}
                 <div className="flex justify-center pt-2">
-                  <Button>Pitch Your Ideas</Button>
+                  <Button onClick={() => setIsModalOpen(true)}>Pitch Your Ideas</Button>
                 </div>
               </div>
             </div>
@@ -402,6 +407,59 @@ export default function Home() {
         </div>
         </footer>
       </MotionSection>
+
+      {/* Contact Modal */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        label="Contact"
+        title="Let's Connect"
+        description="Whether you're a founder looking for capital or a partner exploring collaboration, we'd love to hear from you"
+      >
+        {/* 연락 폼 */}
+        <div
+          className="w-full max-w-[816px] mx-auto flex flex-col"
+          style={{ gap: '8px' }}
+        >
+          <Input
+            placeholder="Name"
+            required
+          />
+
+          <Input
+            type="email"
+            placeholder="Email"
+            required
+          />
+
+          <Input
+            type="tel"
+            placeholder="Phone (optional)"
+          />
+
+          <Input
+            placeholder="Company (optional)"
+          />
+
+          <textarea
+            className="
+              w-full h-[120px] px-4 py-[14px] rounded-xl
+              border border-[#F2F2F2] bg-white
+              font-funnel-sans font-medium text-sm text-black
+              leading-[1.4] resize-none
+              placeholder:text-gray-400
+              focus:outline-none
+            "
+            placeholder="Message"
+            style={{ letterSpacing: '0%' }}
+          />
+
+          {/* 제출 버튼 */}
+          <div className="pt-4">
+            <Button className="w-full">Send Message</Button>
+          </div>
+        </div>
+      </Modal>
     </main>
   )
 }

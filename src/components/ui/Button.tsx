@@ -30,7 +30,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
         // 폰트 스타일 - Funnel Sans, 500 weight, 14px, line-height 1.4
         'font-funnel-sans font-light text-sm leading-[1.4]',
         'transition-colors duration-200',
-        'focus:outline-none focus:ring-2 focus:ring-[#3A6ABB] focus:ring-offset-2',
+        'focus:outline-none',
         'disabled:opacity-50 disabled:cursor-not-allowed',
         // variant 적용
         variants[variant],
