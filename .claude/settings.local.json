@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx next:*)",
+      "Bash(npx tsc:*)",
+      "Read(//mnt/c/Users/a/node_modules/.bin/**)",
+      "Bash(node:*)",
+      "Read(//mnt/c/Users/a/Desktop/FirebaseProjects/orbis/cms/functions/**)",
+      "Bash(curl:*)",
+      "Bash(firebase deploy:*)",
+      "Bash(firebase login:*)",
+      "Bash(git restore:*)",
+      "Bash(sudo rm:*)",
+      "Read(//mnt/c/Users/a/Desktop/Git/orbis/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
