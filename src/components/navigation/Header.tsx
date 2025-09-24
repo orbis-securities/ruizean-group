@@ -2,7 +2,11 @@ import Image from 'next/image'
 import { Container } from '@/components/layout'
 import { Button } from '@/components/ui'
 
-export default function Header() {
+interface HeaderProps {
+  onPitchClick?: () => void
+}
+
+export default function Header({ onPitchClick }: HeaderProps) {
   return (
     <header className="w-full h-[76px] border-b border-[#F7F7F7]">
       <div className="w-full max-w-[1500px] mx-auto h-full px-4 sm:px-5 py-4 flex justify-center sm:justify-between items-center">
@@ -30,7 +34,7 @@ export default function Header() {
 
         {/* 오른쪽 버튼 (데스크톱만) */}
         <div className="hidden sm:flex items-center">
-          <Button>Pitch Your Ideas</Button>
+          <Button onClick={onPitchClick}>Pitch Your Ideas</Button>
         </div>
       </div>
     </header>

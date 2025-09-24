@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       {/* Header */}
-      <Header />
+      <Header onPitchClick={() => setIsModalOpen(true)} />
 
       {/* First Section - Hero */}
       <MotionSection>
