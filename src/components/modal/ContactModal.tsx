@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Modal, Input, Button, Toast } from '@/components/ui'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 interface ContactModalProps {
   isOpen: boolean
@@ -21,6 +22,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const [toastMessage, setToastMessage] = useState('')
   const [toastType, setToastType] = useState<'success' | 'error'>('success')
   const [showError, setShowError] = useState(false)
+  const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null)
+  const recaptchaRef = useRef<ReCAPTCHA>(null)
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
@@ -34,13 +37,22 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     setIsSubmitting(true)
     setShowError(false)
 
+    if (!recaptchaValue) {
+      setShowError(true)
+      setIsSubmitting(false)
+      return
+    }
+
     try {
       const response = await fetch('https://us-central1-orbis-cms.cloudfunctions.net/ruisean_sendMail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken: recaptchaValue
+        })
       })
 
       const result = await response.json()
@@ -59,6 +71,10 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           company: '',
           message: ''
         })
+
+        // reCaptcha 초기화
+        setRecaptchaValue(null)
+        recaptchaRef.current?.reset()
 
         // 모달은 자동으로 닫지 않음 (사용자가 직접 닫아야 함)
       } else {
@@ -116,9 +132,10 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
           <Input
             type="tel"
-            placeholder="Phone (optional)"
+            placeholder="Phone"
             value={formData.phone}
             onChange={(e) => handleInputChange('phone', e.target.value)}
+            required
             disabled={isSubmitting}
           />
 
@@ -139,18 +156,28 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
               focus:outline-none
               disabled:opacity-50 disabled:cursor-not-allowed
             "
-            placeholder="Message"
+            placeholder="Message (optional)"
             value={formData.message}
             onChange={(e) => handleInputChange('message', e.target.value)}
-            required
             disabled={isSubmitting}
             style={{ letterSpacing: '0%' }}
           />
 
+          {/* reCaptcha */}
+          <div className="pt-2">
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+              onChange={(value) => setRecaptchaValue(value)}
+              onExpired={() => setRecaptchaValue(null)}
+              hl="en"
+            />
+          </div>
+
           {/* Error Message (only shown in form) */}
           {showError && (
             <div className="p-3 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm">
-              ❌ Failed to send message. Please try again.
+              ❌ {!recaptchaValue ? 'Please complete the reCAPTCHA verification.' : 'Failed to send message. Please try again.'}
             </div>
           )}
 
@@ -159,7 +186,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             <Button
               type="submit"
               className="w-full"
-              disabled={isSubmitting}
+              disabled={isSubmitting || !recaptchaValue}
             >
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </Button>

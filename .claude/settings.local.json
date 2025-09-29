@@ -11,7 +11,8 @@
       "Bash(firebase login:*)",
       "Bash(git restore:*)",
       "Bash(sudo rm:*)",
-      "Read(//mnt/c/Users/a/Desktop/Git/orbis/**)"
+      "Read(//mnt/c/Users/a/Desktop/Git/orbis/**)",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "ask": []

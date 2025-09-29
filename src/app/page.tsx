@@ -9,6 +9,13 @@ import { useState } from 'react'
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
+  const scrollToWhereWeInvest = () => {
+    const element = document.getElementById('where-we-invest')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <main className="min-h-screen bg-white">
       {/* Header */}
@@ -22,7 +29,7 @@ export default function Home() {
           <div className="w-full max-w-[654px] mx-auto flex flex-col items-center justify-center gap-4 sm:gap-6">
             {/* 제목 */}
             <h1
-              className="w-full font-funnel-display font-semibold text-2xl sm:text-[56px] text-center text-black"
+              className="w-full font-funnel-display font-semibold text-2xl sm:text-[56px] text-center text-black sm:pt-[30px]"
               style={{
                 lineHeight: '110%',
                 letterSpacing: '0%'
@@ -112,11 +119,11 @@ export default function Home() {
             <div className="w-[830px] h-[298px] flex flex-col" style={{ gap: '24px' }}>
               <p className="font-funnel-display font-semibold text-[40px]" style={{ lineHeight: '115%', letterSpacing: '0%' }}>
                 <span className="text-black">We&apos;re a global investment company, </span>
-                <span className="text-[#A6A6A6]">deploying our own capital to back emerging technology, fintech, and intellectual property ventures</span>
+                <span className="text-[#A6A6A6]">deploying our capital to back emerging technology, fintech, and intellectual property ventures</span>
                 <span className="text-black"> — creating long-term value and driving innovation</span>
               </p>
               <div className="flex">
-                <Button onClick={() => setIsModalOpen(true)}>Where We Invest</Button>
+                <Button onClick={scrollToWhereWeInvest}>Where We Invest</Button>
               </div>
             </div>
           </div>
@@ -176,7 +183,7 @@ export default function Home() {
 
           {/* 버튼 */}
           <div className="flex justify-center">
-            <Button onClick={() => setIsModalOpen(true)}>Where We Invest</Button>
+            <Button onClick={scrollToWhereWeInvest}>Where We Invest</Button>
           </div>
         </div>
         </section>
@@ -184,7 +191,7 @@ export default function Home() {
 
       {/* Third Section - Portfolio */}
       <MotionSection>
-        <section className="w-full max-w-[1500px] h-auto sm:h-[702px] mx-auto px-4 sm:px-[60px] py-8 sm:py-[96px]">
+        <section id="where-we-invest" className="w-full max-w-[1500px] h-auto sm:h-[702px] mx-auto px-4 sm:px-[60px] py-8 sm:py-[96px]">
         <div className="w-full max-w-[1380px] mx-auto flex flex-col gap-8 sm:gap-[48px]">
           {/* 헤더 */}
           <div className="text-center sm:text-left">

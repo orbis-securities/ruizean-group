@@ -21,11 +21,13 @@
   },
   "homepage": "https://github.com/orbis-securities/ruizean-group#readme",
   "dependencies": {
+    "@types/react-google-recaptcha": "^2.1.9",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.15",
     "next": "^15.5.3",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-google-recaptcha": "^3.1.0",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
