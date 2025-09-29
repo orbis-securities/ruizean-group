@@ -23,9 +23,9 @@ export default function Home() {
 
       {/* First Section - Hero */}
       <MotionSection>
-        <section className="h-auto min-h-[500px] sm:h-[1144px] pt-8 sm:pt-[60px] pb-8 sm:pb-[96px] px-4 sm:px-0 flex flex-col items-center gap-6 sm:gap-12">
+        <section className="h-auto min-h-[500px] sm:h-[1144px] pt-8 sm:pt-[60px] pb-8 sm:pb-[96px] flex flex-col items-center gap-6 sm:gap-12">
         {/* 텍스트와 버튼 영역 */}
-        <Container>
+        <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-[60px]">
           <div className="w-full max-w-[654px] mx-auto flex flex-col items-center justify-center gap-4 sm:gap-6">
             {/* 제목 */}
             <h1
@@ -54,7 +54,7 @@ export default function Home() {
               <Button onClick={() => setIsModalOpen(true)}>Pitch Your Ideas</Button>
             </div>
           </div>
-        </Container>
+        </div>
 
         {/* 이미지 영역 - 화면 전체 너비 */}
         <div
@@ -72,11 +72,11 @@ export default function Home() {
 
       {/* Second Section - Desktop */}
       <MotionSection>
-        <section className="hidden sm:flex w-[1440px] h-[814px] mx-auto items-center justify-center" style={{ gap: '60px' }}>
-        <div className="w-[1320px] h-[622px] flex items-center justify-center" style={{ gap: '60px' }}>
+        <section className="hidden sm:flex w-full max-w-[1500px] h-[814px] mx-auto items-center justify-center px-4 sm:px-[60px]" style={{ gap: '60px' }}>
+        <div className="w-full max-w-[1380px] h-[622px] flex items-center justify-center" style={{ gap: '60px' }}>
           {/* 이미지 박스 */}
-          <div className="w-[460px] h-[622px] flex items-center justify-center" style={{ gap: '48px' }}>
-            <div className="w-[460px] h-[622px] rounded-xl bg-[#D9D9D9] flex items-center justify-center">
+          <div className="w-full max-w-[460px] h-[622px] flex items-center justify-center" style={{ gap: '48px' }}>
+            <div className="w-full h-[622px] rounded-xl bg-[#D9D9D9] flex items-center justify-center">
               <img
                 src="/sources/images/3dSphere.png"
                 alt="3D Sphere"
@@ -86,38 +86,38 @@ export default function Home() {
           </div>
 
           {/* 텍스트 영역 */}
-          <div className="w-[854px] h-[622px] pl-6 flex flex-col" style={{ gap: '120px' }}>
+          <div className="flex-1 max-w-[854px] h-[622px] pl-6 flex flex-col" style={{ gap: '120px' }}>
             {/* 첫 번째 텍스트 블록 */}
-            <div className="w-[830px] h-[204px] flex flex-col" style={{ gap: '48px' }}>
+            <div className="w-full max-w-[830px] h-[204px] flex flex-col" style={{ gap: '48px' }}>
               {/* 첫 번째 서브 블록 */}
-              <div className="w-[830px] h-[82px] flex items-center">
+              <div className="w-full h-[82px] flex items-center">
                 <SectionHeader label="Who We Are" title="About Us" />
               </div>
 
               {/* 두 번째 서브 블록 */}
-              <div className="w-[830px] h-[74px] flex flex-row" style={{ gap: '40px' }}>
-                <div className="w-[203px] h-[74px] flex flex-col" style={{ gap: '4px' }}>
-                  <div className="font-funnel-display font-semibold text-[40px] text-black" style={{ lineHeight: '115%', letterSpacing: '0%' }}>$55M</div>
-                  <div className="font-funnel-sans font-light text-base text-[#A6A6A6]" style={{ lineHeight: '150%', letterSpacing: '0%' }}>Under Active Investment</div>
+              <div className="w-full h-[74px] flex flex-row flex-wrap" style={{ gap: '20px' }}>
+                <div className="min-w-[180px] max-w-[203px] h-[74px] flex flex-col" style={{ gap: '4px' }}>
+                  <div className="font-funnel-display font-semibold text-2xl lg:text-[32px] xl:text-[40px] text-black" style={{ lineHeight: '115%', letterSpacing: '0%' }}>$55M</div>
+                  <div className="font-funnel-sans font-light text-sm lg:text-base text-[#A6A6A6]" style={{ lineHeight: '150%', letterSpacing: '0%' }}>Under Active Investment</div>
                 </div>
-                <div className="w-[203px] h-[74px] flex flex-col" style={{ gap: '4px' }}>
-                  <div className="font-funnel-display font-semibold text-[40px] text-black" style={{ lineHeight: '115%', letterSpacing: '0%' }}>8</div>
-                  <div className="font-funnel-sans font-light text-base text-[#A6A6A6]" style={{ lineHeight: '150%', letterSpacing: '0%' }}>Portfolio Companies</div>
+                <div className="min-w-[180px] max-w-[203px] h-[74px] flex flex-col" style={{ gap: '4px' }}>
+                  <div className="font-funnel-display font-semibold text-2xl lg:text-[32px] xl:text-[40px] text-black" style={{ lineHeight: '115%', letterSpacing: '0%' }}>8</div>
+                  <div className="font-funnel-sans font-light text-sm lg:text-base text-[#A6A6A6]" style={{ lineHeight: '150%', letterSpacing: '0%' }}>Portfolio Companies</div>
                 </div>
-                <div className="w-[203px] h-[74px] flex flex-col" style={{ gap: '4px' }}>
-                  <div className="font-funnel-display font-semibold text-[40px] text-black" style={{ lineHeight: '115%', letterSpacing: '0%' }}>9+</div>
-                  <div className="font-funnel-sans font-light text-base text-[#A6A6A6]" style={{ lineHeight: '150%', letterSpacing: '0%' }}>Countries</div>
+                <div className="min-w-[180px] max-w-[203px] h-[74px] flex flex-col" style={{ gap: '4px' }}>
+                  <div className="font-funnel-display font-semibold text-2xl lg:text-[32px] xl:text-[40px] text-black" style={{ lineHeight: '115%', letterSpacing: '0%' }}>9+</div>
+                  <div className="font-funnel-sans font-light text-sm lg:text-base text-[#A6A6A6]" style={{ lineHeight: '150%', letterSpacing: '0%' }}>Countries</div>
                 </div>
-                <div className="w-[203px] h-[74px] flex flex-col" style={{ gap: '4px' }}>
-                  <div className="font-funnel-display font-semibold text-[40px] text-black" style={{ lineHeight: '115%', letterSpacing: '0%' }}>10+</div>
-                  <div className="font-funnel-sans font-light text-base text-[#A6A6A6]" style={{ lineHeight: '150%', letterSpacing: '0%' }}>Years of Experience</div>
+                <div className="min-w-[180px] max-w-[203px] h-[74px] flex flex-col" style={{ gap: '4px' }}>
+                  <div className="font-funnel-display font-semibold text-2xl lg:text-[32px] xl:text-[40px] text-black" style={{ lineHeight: '115%', letterSpacing: '0%' }}>10+</div>
+                  <div className="font-funnel-sans font-light text-sm lg:text-base text-[#A6A6A6]" style={{ lineHeight: '150%', letterSpacing: '0%' }}>Years of Experience</div>
                 </div>
               </div>
             </div>
 
             {/* 두 번째 텍스트 블록 */}
-            <div className="w-[830px] h-[298px] flex flex-col" style={{ gap: '24px' }}>
-              <p className="font-funnel-display font-semibold text-[40px]" style={{ lineHeight: '115%', letterSpacing: '0%' }}>
+            <div className="w-full max-w-[830px] h-[298px] flex flex-col" style={{ gap: '24px' }}>
+              <p className="font-funnel-display font-semibold text-xl lg:text-[32px] xl:text-[40px]" style={{ lineHeight: '115%', letterSpacing: '0%' }}>
                 <span className="text-black">We&apos;re a global investment company, </span>
                 <span className="text-[#A6A6A6]">deploying our capital to back emerging technology, fintech, and intellectual property ventures</span>
                 <span className="text-black"> — creating long-term value and driving innovation</span>

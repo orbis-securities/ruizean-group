@@ -12,7 +12,8 @@
       "Bash(git restore:*)",
       "Bash(sudo rm:*)",
       "Read(//mnt/c/Users/a/Desktop/Git/orbis/**)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(npm run lint)"
     ],
     "deny": [],
     "ask": []
